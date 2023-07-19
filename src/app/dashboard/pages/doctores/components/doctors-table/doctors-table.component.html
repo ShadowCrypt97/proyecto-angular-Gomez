@@ -1,0 +1,33 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor.id_doctor}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef> Full Name </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor |ConcatFullNamePipe}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="speciality">
+        <th mat-header-cell *matHeaderCellDef> Speciality </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor.speciality}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="consultingRoom">
+        <th mat-header-cell *matHeaderCellDef> Consulting Room </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor.consultingRoom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor.email}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

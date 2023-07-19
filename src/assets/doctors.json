@@ -1,0 +1,19 @@
+[
+    {
+        "id_doctor": "1",
+        "name": "Carlos",
+        "surname": "Caceres",
+        "speciality": "Medicina General",
+        "consultingRoom": 100,
+        "password": "aws123*"
+    },
+    {
+        "id_doctor": "2",
+        "name": "Alveiro",
+        "surname": "Tarsisio",
+        "speciality": "Ortopedia",
+        "email": "alveiro.tarsicio@gmail.com",
+        "consultingRoom": 101,
+        "password": "aws123$!"
+    }
+]
