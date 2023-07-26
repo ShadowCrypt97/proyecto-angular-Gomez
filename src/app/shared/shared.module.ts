@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ConcatFullNamePipe } from './pipes/concat-full-name.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { TitulosDirective } from './directives/titulos.directive';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -35,7 +36,8 @@ import { TitulosDirective } from './directives/titulos.directive';
     ReactiveFormsModule,
     MatTableModule,
     HttpClientModule,
-    TitulosDirective
+    TitulosDirective,
+    MatDividerModule
   ]
 })
 export class SharedModule { }

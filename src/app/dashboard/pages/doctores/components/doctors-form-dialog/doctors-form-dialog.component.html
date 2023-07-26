@@ -1,4 +1,8 @@
-<h1 mat-dialog-title>Create Doctor</h1>
+<h1 mat-dialog-title>
+    {{editingDoctor ?
+    'Editing to '+ editingDoctor.name + ' ' + editingDoctor.surname:
+    'Creating doctor'}}
+</h1>
 <div mat-dialog-content>
     <form [formGroup]="doctorForm" class="grid">
 
@@ -6,7 +10,7 @@
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Name</mat-label>
                 <input formControlName="name" matInput type="text" name="name" />
-                <mat-error *ngFor="let error of nameControl.errors | keyvalue">
+                <mat-error *ngFor="let error of doctorForm.get('name')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>
@@ -16,7 +20,7 @@
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Surname</mat-label>
                 <input formControlName="surname" matInput type="text" name="surname" />
-                <mat-error *ngFor="let error of surnameControl.errors | keyvalue">
+                <mat-error *ngFor="let error of doctorForm.get('surname')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>
@@ -26,8 +30,8 @@
         <div class="field col-6">
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input [formControl]="emailControl" matInput type="email" name="email" />
-                <mat-error *ngFor="let error of emailControl.errors | keyvalue">
+                <input formControlName="email" matInput type="email" name="email" />
+                <mat-error *ngFor="let error of doctorForm.get('email')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>
@@ -36,8 +40,8 @@
         <div class="field col-6">
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Speciality</mat-label>
-                <input [formControl]="specialityControl" matInput type="text" name="speciality" />
-                <mat-error *ngFor="let error of specialityControl.errors | keyvalue">
+                <input formControlName="speciality" matInput type="text" name="speciality" />
+                <mat-error *ngFor="let error of doctorForm.get('speciality')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>
@@ -46,8 +50,8 @@
         <div class="field col-6">
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Consulting Room</mat-label>
-                <input [formControl]="consultingRoomControl" matInput type="text" name="consulting-room" />
-                <mat-error *ngFor="let error of consultingRoomControl.errors | keyvalue">
+                <input formControlName="consultingRoom" matInput type="text" name="consulting-room" />
+                <mat-error *ngFor="let error of doctorForm.get('consultingRoom')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>
@@ -57,8 +61,8 @@
         <div class="field col-6">
             <mat-form-field class="w-full" appearance="outline">
                 <mat-label>Password</mat-label>
-                <input [formControl]="passwordControl" matInput type="password" name="password" autocomplete="off" />
-                <mat-error *ngFor="let error of passwordControl.errors | keyvalue">
+                <input formControlName="password" matInput type="password" name="password" autocomplete="off" />
+                <mat-error *ngFor="let error of doctorForm.get('password')?.errors | keyvalue">
                     {{ error | controlErrorMessages }}
                 </mat-error>
             </mat-form-field>

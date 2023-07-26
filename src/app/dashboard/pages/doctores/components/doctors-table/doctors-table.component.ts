@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Doctor } from '../../models/doctor.model';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-doctors-table',
@@ -9,22 +8,18 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class DoctorsTableComponent {
-  displayedColumns: string[] = ['id', 'fullName', 'email', 'speciality', 'consultingRoom'];
+  displayedColumns: string[] = ['id', 'fullName', 'email', 'speciality', 'consultingRoom', 'actions'];
+
   @Input()
   dataSource: Doctor[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  @Output()
+  deleteDoctor = new EventEmitter<Doctor>();
 
-  ngOnInit(): void {
-    this.getDoctors()
-  }
+  @Output()
+  editDoctor = new EventEmitter<Doctor>();
 
-  public getDoctors(): Doctor[] {
-    this.httpClient.get("assets/doctors.json").subscribe(data => {
-      this.dataSource = data as Doctor[];
-    })
-    return this.dataSource
-  }
+  constructor() { }
 
 }
 

@@ -1,6 +1,15 @@
 [
     {
         "id_doctor": "1",
+        "name": "Camila",
+        "surname": "Cuervo",
+        "speciality": "Odontología",
+        "email": "camila.cuervo@gmail.com",
+        "consultingRoom": 102,
+        "password": "aws123$!"
+    },
+    {
+        "id_doctor": "2",
         "name": "Carlos",
         "surname": "Caceres",
         "speciality": "Medicina General",
@@ -8,7 +17,7 @@
         "password": "aws123*"
     },
     {
-        "id_doctor": "2",
+        "id_doctor": "3",
         "name": "Alveiro",
         "surname": "Tarsisio",
         "speciality": "Ortopedia",

@@ -5,4 +5,5 @@
     </button>
 </div>
 
-<app-doctors-table [dataSource]="doctors"></app-doctors-table>
+<app-doctors-table [dataSource]="(doctors$|async)||[]" (deleteDoctor)="onDeleteDoctor($event)"
+    (editDoctor)="onEditDoctor($event)"></app-doctors-table>
